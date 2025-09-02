@@ -1,0 +1,158 @@
+body {
+  background-color: #c0c0c0;
+}
+
+.todo-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.todo-item {
+  border: 2px solid grey;
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.4s ease forwards;
+  animation-delay: calc(var(--i) * 100ms);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo-item:hover {
+  background: #f0f0f0;
+  cursor:pointer;
+}
+
+.todo-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+.todo-done {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.checkbox {
+  margin-right: 12px;
+  transform: scale(1.2);
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #005ea2;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.clickable:hover {
+  color: #0077cc;
+}
+
+.todo-details {
+  margin-top: 0.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.arrow {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.arrow.expanded {
+  transform: rotate(90deg);
+}
+
+.todo-item.done {
+  border-color: #28a745;
+}
+
+.todo-item.not-done {
+  border-color: #dc3545;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.todo-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.id-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-btn {
+  height: 2rem;
+  align-self: center;
+  background-color: rgb(179, 0, 0);
+}
+
+.delete-btn:hover {
+  background-color: rgb(149, 0, 0);
+}
+
+.edit-btn{
+  margin-right:0.5rem;
+}
+
+.edit-delete {
+  align-items:center;
+  margin-right: 0.5rem;
+}
+
+.modal {
+  margin-left: 0.5rem;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
